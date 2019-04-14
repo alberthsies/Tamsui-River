@@ -66,15 +66,17 @@
           <div class="container">
             <hr>
             <div class="row">
+              {% for request in requests %}
               <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                       Featured
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Enterprise A</h5>
-                      <p class="card-text">Product: <p id="numproduct">1</p> </p>
-                      <p class="card-text">Quantity: <p id="numquantity">2</p> </p>
+                      <h5 class="card-title">{{ request.company }}</h5>
+                      <p class="card-text">Product: <p id="numproduct">{{ request.item }}</p> </p>
+                      <p class="card-text">Quantity: <p id="numquantity">{{ request.quantity }}</p> </p>
+                      <p class="card-text">Price: <p id="numquantity">{{ request.price }}</p> </p>
 
                       <hr>
                       <form class="form-inline">
@@ -85,12 +87,39 @@
                             <label for="quantity" class="sr-only">QUANTITY</label>
                             <input type="text" class="form-control" id="quantity" placeholder="QUANTITY">
                           </div>
-                          <button type="submit" class="btn btn-dark mb-2">GO</button>
+                          <!--a href="/pending/"><button type="submit" class="btn btn-dark mb-2">GO</button></a-->
+                          <a href="/pending/"><button class="btn btn-dark mb-2">GO</button></a>
                       </form>
 
                     </div>
                   </div>
                 </div>
+                {% endfor %}
+                <!--div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                          Featured
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Enterprise A</h5>
+                          <p class="card-text">Product: <p id="numproduct">1</p> </p>
+                          <p class="card-text">Quantity: <p id="numquantity">2</p> </p>
+    
+                          <hr>
+                          <form class="form-inline">
+                              <div class="form-group mb-2">
+                                <input type="text" readonly class="form-control-plaintext" id="produce" value="I want to produce">
+                              </div>
+                              <div class="form-group mx-sm-3 mb-2">
+                                <label for="quantity" class="sr-only">QUANTITY</label>
+                                <input type="text" class="form-control" id="quantity" placeholder="QUANTITY">
+                              </div>
+                              <button type="submit" class="btn btn-dark mb-2">GO</button>
+                          </form>
+    
+                        </div>
+                      </div>
+                    </div>
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
@@ -113,7 +142,7 @@
                           </form>                          
                         </div>
                       </div>
-                    </div>  
+                    </div-->  
             </div>
           </div>
 

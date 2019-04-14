@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
-from backend.views import index, browse, producer, signup
+from backend.views import index, browse, producer, signin, signup, submitted, pending, preorder
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index),
     path('browse/', browse),
     path('producer/', producer),
+    path('signin/', signin),
     path('signup/', signup),
+    path('submitted/', submitted),
+    path('pending/', pending),
+    path('preorder/', preorder),
 ]

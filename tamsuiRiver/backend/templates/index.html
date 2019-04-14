@@ -21,17 +21,18 @@
         
             
         <div class="container">
-            <form>
+            <form method="post" action="/signin/">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name">USER NAME</label>
-                    <input type="email" class="form-control" id="name" placeholder="Name">
+                    <input type="name" name="name" class="form-control" id="name" placeholder="Name">
                 </div>
                 <div class="form-group">
                     <label for="password">PASSWORD</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                 </div>
                 
-                <button type="submit" class="btn btn-dark align-center">SIGN IN</button>
+                <input type="submit" class="btn btn-dark align-center" value="SIGN IN">
             </form>
         </div>
         <div class="container">
@@ -43,17 +44,17 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="./image/farmer-signup.png" class="card-img-top rounded-circle" width="150px" height="250px" alt="I'M A FARMER">
+                        <img src="/tamsuiRiver/backend/templates/image/farmer-signup.png" class="card-img-top rounded-circle" width="150px" height="250px" alt="I'M A FARMER">
                         <div class="card-body text-center">
                             <hr>
-                            <button type="signup-farmer" class="btn btn-dark">I'M A FARMER</button>
+                            <a href="/signup/"><button type="signup-farmer" class="btn btn-dark">I'M A FARMER</button></a>
                             
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                           <img src="./image/enterprise-signup.jpg" class="card-img-top" width="150px" height="250px" alt="I'M AN ENTERPRISE">
+                           <img src="/tamsuiRiver/backend/templates/image/enterprise-signup.jpg" class="card-img-top" width="150px" height="250px" alt="I'M AN ENTERPRISE">
                         <div class="card-body text-center">
                             <hr>
                             <button type="signup-farmer" class="btn btn-dark">I'M AN ENTERPRISE</button>
